@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald";
+}
+body {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/static/recipeApp/images/detail.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+}
+
+.title-container {
+  display: flex;
+  padding: 25px;
+  justify-content: space-between;
+}
+
+.title-container > div > a {
+  color: white;
+  font-size: 30px;
+}
+
+.title-container > div {
+  display: flex;
+  gap: 10px;
+}
+
+.favorite-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 45px;
+  height: 50px;
+  width: 50px;
+}
+
+.heart-active {
+  color: red;
+}
+
+.title {
+  color: white;
+}
+
+.display-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px black;
+  padding: 10px;
+  color: white;
+}
+
+.information {
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  align-items: center;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+h2 {
+  text-decoration: underline;
+  font-size: 40px;
+}
+
+p {
+  font-size: 1.5rem;
+}

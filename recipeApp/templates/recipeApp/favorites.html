@@ -1,0 +1,19 @@
+{% extends 'recipeApp/base.html' %}
+{% load static %}
+
+{% block title %}Favorites{% endblock title %}
+
+{% block cssFiles %}
+<link rel="stylesheet" href="{% static 'recipeApp/style.css' %}" />
+{% endblock cssFiles %}
+
+{% block content %}
+<h1>Your Favorites</h1>
+
+{% if recipes %}
+  {% include 'recipeApp/includes/recipeListItem.html' %}
+{% else %}
+  <h3>You doesn't have any favorites</h3>
+{% endif %}
+<a href="{% url 'recipes-list' %}" class='back'>Go Back</a>
+{% endblock content %}

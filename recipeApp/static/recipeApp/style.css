@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald";
+}
+body {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/static/recipeApp/images/detail.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+h1 {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.recipesContainer {
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  width: min(80vh, 400px);
+  margin: auto;
+  height: 70%;
+  max-height: 70%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: scroll;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  height: 15%;
+  border: 2px solid white;
+  margin: 4px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 500ms all;
+}
+
+li:hover {
+  background-color: white;
+  color: black;
+}
+
+.favorite {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+h3 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px;
+}
+
+.back {
+  text-decoration: underline;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.recipesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.recipesContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

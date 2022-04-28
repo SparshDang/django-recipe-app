@@ -1,0 +1,12 @@
+<div class="recipesContainer">
+  <ul>
+    {% for recipe in recipes %}
+    <a href="{% url 'recipe' recipe.slug %}">
+      <li>
+        {{recipe.name}}
+        <i class="fa fa-arrow-right"></i>
+      </li>
+    </a>
+    {% endfor %}
+  </ul>
+</div>

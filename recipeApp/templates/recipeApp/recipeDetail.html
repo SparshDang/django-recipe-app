@@ -1,0 +1,65 @@
+{% extends 'recipeApp/base.html' %}
+
+{% load static %} 
+
+{% load custom_tag %}
+
+{%block title %}{{recipe.name}}{% endblock title %}
+
+{% block cssFiles %}
+<link rel="stylesheet" href="{% static 'recipeApp/recipeDetail.css' %}" />
+{% endblock cssFiles %}
+
+{% block content %}
+
+<div class="title-container">
+  <div>
+    <a href="{% url 'recipes-list' %}">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+
+    <h1 class="title">{{recipe.name}}</h1>
+  </div>
+
+  <form action="{% url 'favorite' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="recipeSlug" value="{{recipe.slug}}" />
+    <button type="submit" class="favorite-button">
+      {% if isFavorite == True %}
+      <i class="fa fa-heart heart-active"></i>
+      {% else %}
+      <i class="fa fa-solid fa-heart"></i>
+      {% endif %}
+    </button>
+  </form>
+</div>
+
+<div class="information display-container">
+  <p>Duration: {{ recipe.preprationDuration|display_able }}</p>
+  <p>Servings: {{recipe.servings}}</p>
+  <p>Dish Type: {{recipe.dishType}}</p>
+</div>
+
+<div class="ingredients display-container">
+  <h2>Ingredients</h2>
+  <ul class="ingredients-list">
+    {% for ingredient in recipe.ingredients %}
+    <li>
+      <p>{{ingredient.name}} : {{ingredient.amount}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="steps display-container">
+  <h2>Steps</h2>
+  <ul class="steps-list">
+    {% for step in recipe.steps %}
+    <li>
+      <p>{{step}}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock content %}
