@@ -31,7 +31,7 @@ class RecipeDetailView(DetailView):
 
         if favorites == None:
             context['isFavorite'] = False
-        if self.object.id in favorites:
+        elif self.object.id in favorites:
             context['isFavorite'] = True
         else:
             context['isFavorite'] = False
